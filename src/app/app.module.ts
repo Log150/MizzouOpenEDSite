@@ -8,7 +8,6 @@ import { HomeComponent } from './home/home.component';
 import { HeroImageComponent } from './home/hero-image/hero-image.component';
 import { ContentComponent } from './home/content/content.component';
 import { FooterComponent } from './footer/footer.component';
-import { ScrollLineComponent } from './scroll-line/scroll-line.component';
 import { CommonModule } from '@angular/common';
 import { ParallaxMousemoveDirective } from './parallax-mousemove.directive';
 
@@ -20,7 +19,6 @@ import { ParallaxMousemoveDirective } from './parallax-mousemove.directive';
     HeroImageComponent,
     ContentComponent,
     FooterComponent,
-    ScrollLineComponent,
     ParallaxMousemoveDirective
   ],
   imports: [

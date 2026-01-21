@@ -20,7 +20,9 @@ export class ContentComponent implements OnInit, AfterViewInit {
   ngAfterViewInit() {
     // Select the About Us card and Contact Us card using the class or id
     const aboutCard = this.el.nativeElement.querySelector('.top-card .card');
+    const projectsCard = this.el.nativeElement.querySelector('.first-card');
     const contactCard = this.el.nativeElement.querySelector('.second-card');
+    const labsCards = this.el.nativeElement.querySelector('.third-card');
 
     // Create the IntersectionObserver for the "About Us" card
     const aboutObserver = new IntersectionObserver((entries, observer) => {
@@ -41,7 +43,7 @@ export class ContentComponent implements OnInit, AfterViewInit {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           // Add animation classes for the contact card
-          entry.target.classList.add('animate__animated', 'animate__fadeInRight');
+          entry.target.classList.add('animate__animated', 'animate__fadeInLeft');
           // Unobserve after animation is triggered
           observer.unobserve(entry.target);
         }
@@ -55,8 +57,16 @@ export class ContentComponent implements OnInit, AfterViewInit {
       aboutObserver.observe(aboutCard);
     }
 
+    if (projectsCard) {
+      contactObserver.observe(projectsCard);
+    }
+
     if (contactCard) {
       contactObserver.observe(contactCard);
+    }
+
+    if (labsCards) {
+      contactObserver.observe(labsCards);
     }
   }
 }

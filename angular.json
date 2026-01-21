@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "mizzou-racing-page": {
+    "mizzou-opened-page": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/mizzou-racing-page",
+            "outputPath": "dist/mizzou-opened-page",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -58,10 +58,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "mizzou-racing-page:build:production"
+              "buildTarget": "mizzou-opened-page:build:production"
             },
             "development": {
-              "buildTarget": "mizzou-racing-page:build:development"
+              "buildTarget": "mizzou-opened-page:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -69,7 +69,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "mizzou-racing-page:build"
+            "buildTarget": "mizzou-opened-page:build"
           }
         },
         "test": {
