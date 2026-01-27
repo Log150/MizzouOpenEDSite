@@ -17,12 +17,23 @@ p a:hover {
 }
 
 
+.leftmost-grid-item {
+  margin-left: 20%;
+  grid-column: 1 / span 2;
+  width: 80%;
+}
+
+.long-grid-item {
+  margin-left: 7%;
+  grid-column: 1 / span 4;
+}
+
 /* First card remains the same */
 .card-container {
     display: flex;
     justify-content: center;
-    align-items: center;
-    width: 100%;
+    /*align-items: center;
+    width: 100%; */
     background: rgb(15, 15, 15);
     padding: 100px 0px;
     overflow-x: hidden;
@@ -92,6 +103,40 @@ p a:hover {
     padding-left: 30px;
     border-left: solid 1px white;
   }
+
+
+
+
+  .top-card-long {
+    text-align: center;
+  }
+  
+  .top-card-long .card-left {
+    flex: 1; /* 50% of the card */
+    display: block; /* Vertically stacked elements */
+    color: #F1B82D;
+  }
+  
+  .top-card-long .card-left h2 {
+    margin: 15px 0 15px 0;
+  }
+  
+  .top-card-long .card-left p {
+    margin: 5px 0;
+    font-size: 1.2rem;
+    color: rgb(223, 223, 223);
+    text-align: center;
+  }
+  
+  .top-card-long .card-right {
+    flex: 1; /* 50% of the card */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+
+
 
     /* first card */
   .first-card {

@@ -20,12 +20,15 @@ export class ContentComponent implements OnInit, AfterViewInit {
   ngAfterViewInit() {
     // Select the About Us card and Contact Us card using the class or id
     const aboutCard = this.el.nativeElement.querySelector('.top-card .card');
+
+    const longTopCardCard = this.el.nativeElement.querySelector('.top-card-long');
+
     const projectsCard = this.el.nativeElement.querySelector('.first-card');
     const contactCard = this.el.nativeElement.querySelector('.second-card');
     const labsCards = this.el.nativeElement.querySelector('.third-card');
 
     // Create the IntersectionObserver for the "About Us" card
-    const aboutObserver = new IntersectionObserver((entries, observer) => {
+    const leftSlideObserver = new IntersectionObserver((entries, observer) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           // Add animation classes when the card is in view
@@ -39,11 +42,12 @@ export class ContentComponent implements OnInit, AfterViewInit {
     });
 
     // Create the IntersectionObserver for the "Contact Us" card
-    const contactObserver = new IntersectionObserver((entries, observer) => {
+    // Create the IntersectionObserver for the "Contact Us" card
+    const upSlideObserver = new IntersectionObserver((entries, observer) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           // Add animation classes for the contact card
-          entry.target.classList.add('animate__animated', 'animate__fadeInLeft');
+          entry.target.classList.add('animate__animated', 'animate__fadeInUp');
           // Unobserve after animation is triggered
           observer.unobserve(entry.target);
         }
@@ -54,19 +58,23 @@ export class ContentComponent implements OnInit, AfterViewInit {
 
     // Observe the About Us and Contact Us cards
     if (aboutCard) {
-      aboutObserver.observe(aboutCard);
+      leftSlideObserver.observe(aboutCard);
+    }
+
+    if (longTopCardCard) {
+      leftSlideObserver.observe(longTopCardCard);
     }
 
     if (projectsCard) {
-      contactObserver.observe(projectsCard);
+      upSlideObserver.observe(projectsCard);
     }
 
     if (contactCard) {
-      contactObserver.observe(contactCard);
+      upSlideObserver.observe(contactCard);
     }
 
     if (labsCards) {
-      contactObserver.observe(labsCards);
+      upSlideObserver.observe(labsCards);
     }
   }
 }
