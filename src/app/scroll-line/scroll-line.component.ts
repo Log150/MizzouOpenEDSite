@@ -3,7 +3,7 @@ import { Component, HostListener } from '@angular/core';
 @Component({
   selector: 'app-scroll-line',
   templateUrl: './scroll-line.component.html',
-  styleUrls: ['./scroll-line.component.css']
+  styleUrls: ['./scroll-line.component.scss']
 })
 export class ScrollLineComponent {
   lineWidth = 0; // Initial width is 0%
